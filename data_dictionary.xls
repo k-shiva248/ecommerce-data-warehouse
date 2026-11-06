@@ -1,0 +1,49 @@
+table_name,column_name,data_type,is_primary_key,is_foreign_key,nullable,description
+customers,customer_id,str,True,False,False,Customer id in customers
+customers,customer_name,str,False,False,False,Customer name in customers
+customers,email,str,False,False,False,Email in customers
+customers,city,str,False,False,True,City in customers
+customers,region,str,False,False,True,Region in customers
+customers,signup_date,str,False,False,True,Signup date in customers
+products,product_id,str,True,False,False,Product id in products
+products,product_name,str,False,False,False,Product name in products
+products,category,str,False,False,False,Category in products
+products,unit_price,float64,False,False,False,Unit price in products
+orders,order_id,str,True,False,False,Order id in orders
+orders,customer_id,str,False,True,False,Customer id in orders
+orders,order_date,str,False,False,False,Order date in orders
+orders,order_status,str,False,False,False,Order status in orders
+order_items,order_item_id,str,True,False,False,Order item id in order_items
+order_items,order_id,str,False,True,False,Order id in order_items
+order_items,product_id,str,False,True,False,Product id in order_items
+order_items,quantity,int64,False,False,False,Quantity in order_items
+order_items,unit_price,float64,False,False,False,Unit price in order_items
+order_items,discount,float64,False,False,True,Discount in order_items
+dim_customer,customer_key,int64,True,False,False,Customer key in dim_customer
+dim_customer,customer_id,str,False,False,False,Customer id in dim_customer
+dim_customer,customer_name,str,False,False,False,Customer name in dim_customer
+dim_customer,email,str,False,False,True,Email in dim_customer
+dim_customer,city,str,False,False,True,City in dim_customer
+dim_customer,region,str,False,False,True,Region in dim_customer
+dim_product,product_key,int64,True,False,False,Product key in dim_product
+dim_product,product_id,str,False,False,False,Product id in dim_product
+dim_product,product_name,str,False,False,False,Product name in dim_product
+dim_product,category,str,False,False,False,Category in dim_product
+dim_product,unit_price,float64,False,False,False,Unit price in dim_product
+dim_date,date_key,int64,True,False,False,Date key in dim_date
+dim_date,full_date,datetime64[us],False,False,False,Full date in dim_date
+dim_date,day,int32,False,False,False,Day in dim_date
+dim_date,month,int32,False,False,False,Month in dim_date
+dim_date,month_name,str,False,False,False,Month name in dim_date
+dim_date,quarter,int32,False,False,False,Quarter in dim_date
+dim_date,year,int32,False,False,False,Year in dim_date
+fact_sales,order_item_id,str,True,False,False,Order item id in fact_sales
+fact_sales,order_id,str,False,False,False,Order id in fact_sales
+fact_sales,customer_key,int64,False,True,False,Customer key in fact_sales
+fact_sales,product_key,int64,False,True,False,Product key in fact_sales
+fact_sales,date_key,int64,False,True,False,Date key in fact_sales
+fact_sales,quantity,int64,False,False,False,Quantity in fact_sales
+fact_sales,unit_price,float64,False,False,False,Unit price in fact_sales
+fact_sales,discount,float64,False,False,False,Discount in fact_sales
+fact_sales,gross_amount,float64,False,False,False,Gross amount in fact_sales
+fact_sales,sales_amount,float64,False,False,False,Sales amount in fact_sales
