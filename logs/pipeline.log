@@ -1,0 +1,6 @@
+2026-11-06 13:00:09,675 - INFO - Pipeline started. Run ID: ad6d6980-3c66-4c43-bbf5-a98fdd2acce8
+2026-11-06 13:01:05,221 - INFO - Pipeline completed successfully. Run ID: ad6d6980-3c66-4c43-bbf5-a98fdd2acce8
+2026-11-06 13:01:39,244 - ERROR - Pipeline failed. Run ID: ad6d6980-3c66-4c43-bbf5-a98fdd2acce8. Reason: Simulated data processing failure
+2026-11-06 13:22:52,610 - INFO - Pipeline started. Run ID: 7a5106b0-7686-4993-86b9-36d701ee36fa
+2026-11-06 13:22:53,667 - INFO - Pipeline completed successfully. Run ID: 7a5106b0-7686-4993-86b9-36d701ee36fa
+2026-11-06 13:22:54,417 - ERROR - Pipeline failed. Run ID: 7a5106b0-7686-4993-86b9-36d701ee36fa. Reason: Simulated data processing failure
