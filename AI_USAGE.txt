@@ -1,0 +1,29 @@
+# AI Usage Disclosure
+
+## AI Tool
+ChatGPT by OpenAI.
+
+## How AI Helped
+AI was used for:
+- Understanding project requirements.
+- Planning the ETL pipeline architecture.
+- Learning Python, Pandas and DuckDB implementation approaches.
+- Debugging Python and DuckDB errors.
+- Designing validation and test cases.
+- Improving SQL queries and documentation.
+
+## Where AI Assistance Was Significant
+AI provided substantial implementation guidance, example code, debugging suggestions and explanations during development.
+
+## My Personal Contribution
+I worked through the project in Jupyter Notebook, executed the code, inspected outputs, investigated errors and made implementation decisions.
+
+I reviewed the generated code and tested the pipeline components using sample datasets and performance data.
+
+## Validation
+I checked data validation outputs, dimensional tables, DuckDB loading, analytical queries, automated tests and performance measurements.
+
+## Limitations
+The project has known limitations, including incomplete incremental loading, limited historical dimension handling and opportunities for stronger automated recovery.
+
+I will explain the implementation, assumptions, design decisions and limitations during the project walkthrough.
