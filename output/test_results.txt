@@ -1,0 +1,19 @@
+[1m============================= test session starts =============================[0m
+platform win32 -- Python 3.13.11, pytest-9.2.0, pluggy-1.7.0 -- C:\Users\Administrator\anaconda4\envs\shivaprasad741\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Administrator\ecommerce-data-warehouse
+plugins: anyio-4.10.0, Faker-40.44.0
+[1mcollecting ... [0mcollected 10 items
+
+tests/test_pipeline.py::test_happy_path [32mPASSED[0m[32m                           [ 10%][0m
+tests/test_pipeline.py::test_empty_input [32mPASSED[0m[32m                          [ 20%][0m
+tests/test_pipeline.py::test_missing_required_column [32mPASSED[0m[32m              [ 30%][0m
+tests/test_pipeline.py::test_duplicate_records [32mPASSED[0m[32m                    [ 40%][0m
+tests/test_pipeline.py::test_null_values [32mPASSED[0m[32m                          [ 50%][0m
+tests/test_pipeline.py::test_invalid_foreign_key [32mPASSED[0m[32m                  [ 60%][0m
+tests/test_pipeline.py::test_negative_quantity [32mPASSED[0m[32m                    [ 70%][0m
+tests/test_pipeline.py::test_late_arriving_record [32mPASSED[0m[32m                 [ 80%][0m
+tests/test_pipeline.py::test_same_input_is_deterministic [32mPASSED[0m[32m          [ 90%][0m
+tests/test_pipeline.py::test_processing_failure_is_detected [32mPASSED[0m[32m       [100%][0m
+
+[32m============================= [32m[1m10 passed[0m[32m in 0.95s[0m[32m ==============================[0m

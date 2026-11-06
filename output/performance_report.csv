@@ -1,0 +1,2 @@
+records_generated,records_transformed,records_loaded,generation_seconds,transformation_seconds,duckdb_load_seconds,total_seconds,records_per_second,memory_usage_mb,optimization
+100000,100000,100000,0.15110870002536103,2.317276399990078,0.11248898506164551,2.5808740850770846,38746.562871165115,29.182559967041016,Vectorized Pandas calculations

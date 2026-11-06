@@ -1,0 +1,5 @@
+source_file,total_records,total_columns,missing_values
+customers.csv,100,6,2
+products.csv,30,4,0
+orders.csv,500,4,0
+order_items.csv,1001,6,1
