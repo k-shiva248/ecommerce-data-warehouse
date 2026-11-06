@@ -3,145 +3,62 @@
 
 ## 1. Project Overview
 
-This project builds a small dimensional data warehouse
-for an e-commerce business using Python, Pandas, SQL
-and DuckDB.
+This project implements a small dimensional data warehouse for an e-commerce business using Python, Pandas, SQL and DuckDB.
 
-The pipeline ingests transactional CSV files, validates
-records, separates rejected data, transforms valid data
-into dimension and fact tables, and publishes the data
-to DuckDB for analytical reporting.
+The solution processes transactional CSV data, validates records, handles data-quality issues, transforms valid records into dimension and fact tables, and publishes the results into a DuckDB analytical warehouse.
 
-## 2. Technologies Used
+The objective is to demonstrate an end-to-end data engineering workflow covering data ingestion, validation, transformation, dimensional modeling, data publishing, testing, performance measurement and documentation.
 
-- Python
-- Pandas
-- NumPy
-- DuckDB
-- SQL
-- Pytest
-- Jupyter Notebook
-- Git and GitHub
+## 2. Business Problem
 
-## 3. Architecture
+E-commerce businesses generate transactional data from customers, products, orders and order items.
 
-CSV Source Data
-    |
-    v
-Data Ingestion
-    |
-    v
-Data Validation
-    |
-    +------> Rejected Records / Quarantine
-    |
-    v
-Data Transformation
-    |
-    v
-Dimensional Model
-    |
-    +------> dim_customer
-    +------> dim_product
-    +------> dim_date
-    +------> fact_sales
-    |
-    v
-DuckDB Warehouse
-    |
-    v
-SQL Analytical Reports
+Analyzing this data directly from transactional sources can make reporting difficult because information is distributed across multiple files and requires cleaning and transformation.
 
-## 4. Data Model
+This project addresses the problem by building a centralized dimensional model that supports analytical questions such as:
 
-### Dimension Tables
+- What is the total sales revenue?
+- What is the monthly revenue?
+- Which products generate the highest revenue?
+- Which customers contribute the most sales?
+- How does revenue vary across product categories and regions?
 
-- dim_customer: Customer information.
-- dim_product: Product information.
-- dim_date: Calendar information.
+## 3. Project Objectives
 
-### Fact Table
+- Build a dimensional data warehouse from transactional sources.
+- Define source and target schemas.
+- Implement data ingestion and validation.
+- Identify and quarantine invalid records.
+- Create dimension and fact tables.
+- Maintain primary-key and foreign-key relationships.
+- Implement safe fact-table reload behavior.
+- Generate analytical reports using SQL.
+- Test important data-quality scenarios.
+- Measure performance using 100,000 synthetic records.
 
-- fact_sales: One row per order item belonging
-  to a completed order.
+## 4. Technology Stack
 
-### Fact Table Measures
+| Technology | Purpose |
+|---|---|
+| Python | Pipeline implementation |
+| Pandas | Data cleaning and transformation |
+| NumPy | Numerical operations and data generation |
+| Faker | Synthetic data generation |
+| DuckDB | Analytical database |
+| SQL | Analytical queries |
+| Pytest | Automated testing |
+| Jupyter Notebook | Development and execution |
+| GitHub | Version control and project submission |
 
-- quantity
-- unit_price
-- discount
-- gross_amount
-- sales_amount
+## 5. Project Architecture
 
-## 5. Data Quality Checks
+The pipeline follows this architecture:
 
-The pipeline checks:
-
-- Missing required values
-- Duplicate records
-- Invalid customer references
-- Invalid product references
-- Invalid order references
-- Negative quantities
-- Invalid prices
-- Invalid discounts
-- Invalid dates
-
-Rejected records are separated from valid records.
-
-## 6. Idempotency
-
-The project includes a fact-table reload test.
-Repeated loading of the same input should not increase
-the number of fact records.
-
-## 7. Performance Testing
-
-The project includes a performance test using
-100,000 synthetic order-item records.
-
-It measures:
-
-- Data generation time
-- Transformation time
-- DuckDB loading time
-- Total processing time
-- DataFrame memory usage
-
-## 8. Testing
-
-Automated tests are written using Pytest.
-
-Run tests using:
-
-    python -m pytest -v tests
-
-## 9. Setup
-
-Install the required libraries:
-
-    pip install -r requirements.txt
-
-Open the Jupyter Notebook:
-
-    jupyter notebook
-
-Run the notebook cells in sequence.
-
-## 10. Project Outputs
-
-- Dimensional CSV files
-- DuckDB warehouse
-- SQL analytical reports
-- Pipeline logs
-- Validation reports
-- Performance report
-
-## 11. Limitations and Future Improvements
-
-- Add incremental loading with persistent source
-  watermarks.
-- Implement full slowly changing dimensions.
-- Add automated scheduling.
-- Add cloud storage and orchestration.
-- Improve retry and recovery handling.
+```mermaid
+flowchart TD
+    A[Transactional CSV Sources] --> B[Data Ingestion]
+    B --> C[Schema Validation]
+    C --> D[Business Rule Validation]
+    D --> E[Valid Records]
+    D --> F[Rejected Records / Quarantine]
+    E --> G[Data
